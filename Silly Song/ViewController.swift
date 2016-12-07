@@ -49,6 +49,7 @@ class ViewController: UIViewController {
             
             // display them in the lyricsView outlet
             lyricsView.text = fullName
+            nameField.text = ""
         } else {
             return
         }
