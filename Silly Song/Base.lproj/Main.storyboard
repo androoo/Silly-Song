@@ -28,7 +28,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WSr-h4-fxZ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WSr-h4-fxZ">
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
@@ -37,7 +37,7 @@
                                     <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="xhr-U8-DwP"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enz-Gy-YsH">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Enz-Gy-YsH">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="507-vC-Goe"/>
@@ -48,19 +48,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="xOC-vt-jxW">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="Fjg-6B-A4U"/>
-                                    <constraint firstAttribute="width" constant="18" id="ofh-Jz-41j"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.64313725490196072" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="WSr-h4-fxZ" firstAttribute="leading" secondItem="xOC-vt-jxW" secondAttribute="trailing" constant="5" id="22F-y5-CkC"/>
                             <constraint firstItem="3Fc-Ix-zXO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-0.5" id="5NU-47-O2n"/>
                             <constraint firstItem="WSr-h4-fxZ" firstAttribute="top" secondItem="3Fc-Ix-zXO" secondAttribute="bottom" constant="24" id="6lg-hI-hYA"/>
-                            <constraint firstItem="xOC-vt-jxW" firstAttribute="top" secondItem="3Fc-Ix-zXO" secondAttribute="bottom" constant="26.5" id="7jN-hc-UWW"/>
                             <constraint firstItem="Enz-Gy-YsH" firstAttribute="centerX" secondItem="WSr-h4-fxZ" secondAttribute="centerX" id="J9j-bt-D12"/>
                             <constraint firstItem="3Fc-Ix-zXO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="JqB-Fl-qjW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WSr-h4-fxZ" secondAttribute="trailing" constant="50" id="Ksg-e0-vjD"/>
@@ -78,7 +70,4 @@
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="arrow" width="24" height="36"/>
-    </resources>
 </document>
