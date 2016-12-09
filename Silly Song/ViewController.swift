@@ -39,53 +39,46 @@ class ViewController: UIViewController {
     }
 
     @IBAction func displayLyrics(_ sender: AnyObject) {
-        
-        // make sure name field text property isn't empty
-        if (nameField.text != nil) {
-            var fullName = nameField.text
-            
-            // takes name and generate the lyrics
-            fullName = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
-            
-            // display them in the lyricsView outlet
-            lyricsView.text = fullName
-            nameField.text = ""
-        } else {
-            return
-        }
-        
-    } // closes displayLyrics method
-    
 
+        guard let name = nameField.text else { return }
+        
+            var fullName = name
+            fullName = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
+            lyricsView.text = fullName
+    }
 } // closes class
 
 
 // MARK: - lyrics functions
 
+// shorten name function
+
+func shortenedName(name: String) -> String {
+    let lowercaseName = name.lowercased().folding(options: .diacriticInsensitive, locale: nil)
+    let vowelSet = CharacterSet(charactersIn: "AEIOUaeiou")
+    
+    // find where ther first vowel is using rangeOfCharacter
+    // return lowercase name as substring from lowerbound of the new constant firstVowelRange
+    if let firstVowelRange = name.rangeOfCharacter(from: vowelSet, options: .caseInsensitive) {
+        return lowercaseName.substring(from: firstVowelRange.lowerBound)
+    }
+    
+    // return full name if no vowels
+    return lowercaseName
+  
+}
 
 
-
-// a function that takes a name and a template
 
 func lyricsForName(lyricsTemplate: String, fullName: String) -> String {
     let shortName = shortenedName(name: fullName)
     let lyrics = lyricsTemplate
         .replacingOccurrences(of: "<FULL_NAME>", with: fullName)
         .replacingOccurrences(of: "<SHORT_NAME>", with: shortName)
-    
     return lyrics
 }
 
-// shorten name function
 
-func shortenedName(name: String) -> String {
-    var shortName = name
-    // take off the first two characters of the full name
-    
-    shortName.characters.removeFirst()
-    shortName.lowercased()
-    return shortName
-}
 
 
 // MARK: - extensions
